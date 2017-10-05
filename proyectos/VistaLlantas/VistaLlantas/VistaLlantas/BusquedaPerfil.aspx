@@ -25,13 +25,13 @@
                         <nav class="navbar navbar-default navbar-fixed-top">
                             <div class="navbar-header col-xs-3 pull-left">
                                 <a class="navbar-brand">
-                                    <h4 style="margin-left: 80px">Buscar Usuario</h4>
+                                    <h4 style="margin-left: 80px">Buscar Perfil</h4>
                                 </a>
                             </div>
                             <div class="col-xs-6" style="padding-top: 7.5px; margin-right: 5px;">
                                 <div class="input-group">
                                     <span class="input-group-addon" style="cursor: pointer;"><i class=" fa fa-search"></i></span>
-                                    <input type="search" id="txtSearch" class="form-control" placeholder="Buscar Cliente..." />
+                                    <input type="search" id="txtSearch" class="form-control" placeholder="Buscar Perfil" />
                                     <span class="input-group-addon" onclick="location.reload(true);" style="cursor: pointer;"><i class="fa fa-refresh"></i></span>
                                 </div>
                             </div>
@@ -53,12 +53,8 @@
                             CssClass="table table-striped table-bordered table-hover table-responsive" AllowSorting="True" DataKeyNames="id">
                             <AlternatingRowStyle BackColor="White" ForeColor="#333333" />
                             <Columns>
-                                <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                                <asp:BoundField DataField="Paterno" HeaderText="Apellido Paterno" SortExpression="A Paterno" />
-                                <asp:BoundField DataField="Materno" HeaderText="Apellido Materno" SortExpression="A Materno" />
                                 <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="id" />
-                                <asp:BoundField DataField="Perfil" HeaderText="Perfil" SortExpression="Perfil" />
-                                <asp:BoundField DataField="Usuario" HeaderText="Usuario" SortExpression="Usuario" />
+                                <asp:BoundField DataField="Perfil" HeaderText="Nombre de Perfil" SortExpression="Perfil" />
                                 <asp:TemplateField HeaderText="Ver" HeaderStyle-Width="10">
                                     <ItemTemplate>
                                     </ItemTemplate>
