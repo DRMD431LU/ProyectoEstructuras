@@ -11,6 +11,6 @@ def pantalla_de_juego():
     while True:
         screen.fill(bg_color)
         pusheen.blitme()
-        fj.check_eventos()
+        fj.check_eventos(pusheen)
         pygame.display.flip()
 

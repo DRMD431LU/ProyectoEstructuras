@@ -7,7 +7,12 @@ Created on Thu Nov  9 22:44:18 2017
 import pygame
 from sys import exit
 
-def check_eventos():
+def check_eventos(pusheen):
     for event in pygame.event.get():
-           if event.type == pygame.QUIT:
-               exit()
+        if event.type == pygame.QUIT:
+            exit()
+        elif (event.type == pygame.KEYDOWN):
+            if event.key == pygame.K_RIGHT:
+                pusheen.rect.centerx += 10
+            elif(event.key == pygame.K_LEFT):
+                pusheen.rect.centerx-=10
