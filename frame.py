@@ -1,5 +1,7 @@
-import pygame,time
-from sys import *
+import pygame
+import funciones_juego as fj
+from clases import *
+
 def pantalla_de_juego():
     pygame.init()
     screen = pygame.display.set_mode((1200, 800))
@@ -9,19 +11,6 @@ def pantalla_de_juego():
     while True:
         screen.fill(bg_color)
         pusheen.blitme()
-        for event in pygame.event.get():
-           # if event.type == pygame.QUIT:  
-            #    quit()
-            pass
+        fj.check_eventos()
         pygame.display.flip()
 
-class Pusheen():
-    def __init__(self, screen):
-        self.screen = screen
-        self.image = pygame.image.load('imagenes/pusheen.bmp')
-        self.rect = self.image.get_rect()
-        self.screen_rect = screen.get_rect()
-        self.rect.centerx = self.screen_rect.centerx
-        self.rect.bottom = self.screen_rect.bottom
-    def blitme(self):
-        self.screen.blit(self.image, self.rect)
