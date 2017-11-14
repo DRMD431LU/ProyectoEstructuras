@@ -13,6 +13,24 @@ def check_eventos(pusheen):
             exit()
         elif (event.type == pygame.KEYDOWN):
             if event.key == pygame.K_RIGHT:
-                pusheen.rect.centerx += 10
+                pusheen.moving_right=True
             elif(event.key == pygame.K_LEFT):
-                pusheen.rect.centerx-=10
+                pusheen.moving_left=True
+            elif(event.key == pygame.K_UP):
+                pusheen.moving_up=True
+            elif(event.key == pygame.K_DOWN):
+                pusheen.moving_down=True
+        elif (event.type==pygame.KEYUP):
+            if event.key== pygame.K_RIGHT:
+                pusheen.moving_right=False
+            elif(event.key == pygame.K_LEFT):
+                pusheen.moving_left=False
+            elif(event.key == pygame.K_UP):
+                pusheen.moving_up=False
+            elif(event.key == pygame.K_DOWN):
+                pusheen.moving_down=False
+
+def act_screen(ai_settings, screen, pusheen):
+    screen.fill(ai_settings.bg_color)
+    pusheen.blitme()
+    pygame.display.flip()

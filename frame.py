@@ -1,16 +1,17 @@
 import pygame
 import funciones_juego as fj
 from clases import *
+from settings import Settings
 
 def pantalla_de_juego():
     pygame.init()
-    screen = pygame.display.set_mode((1200, 800))
+    ai_settings=Settings()
+    screen = pygame.display.set_mode((ai_settings.screen_width,ai_settings.screen_height))
     pygame.display.set_caption("Arboles en 2D")
     pusheen = Pusheen(screen)
-    bg_color = (230, 255, 200)
-    while True:
-        screen.fill(bg_color)
-        pusheen.blitme()
+    while True:     
         fj.check_eventos(pusheen)
-        pygame.display.flip()
+        pusheen.update()
+        fj.act_screen(ai_settings,screen,pusheen)
+        
 
